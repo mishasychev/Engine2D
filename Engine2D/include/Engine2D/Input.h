@@ -1,0 +1,140 @@
+#pragma once
+
+#include <cstdint>
+
+namespace e2d
+{
+	enum class Button : uint8_t
+	{
+		MOUSE_LEFT = 0x01,
+		MOUSE_RIGHT = 0x02,
+		CANCEL = 0x03,
+		MOUSE_MIDDLE = 0x04,
+		MOUSE_X1 = 0x05,
+		MOUSE_X2 = 0x06,
+
+		BACKSPACE = 0x08,
+		TAB = 0x09,
+		CLEAR = 0x0C,
+		ENTER = 0x0D,
+		SHIFT = 0x10,
+		CTRL = 0x11,
+		ALT = 0x12,
+		PAUSE = 0x13,
+		CAPS_LOCK = 0x14,
+		ESCAPE = 0x1B,
+		SPACE = 0x20,
+		PAGE_UP = 0x21,
+		PAGE_DOWN = 0x22,
+		END = 0x23,
+		HOME = 0x24,
+
+		LEFT = 0x25,
+		UP = 0x26,
+		RIGHT = 0x27,
+		DOWN = 0x28,
+
+		SELECT = 0x29,
+		PRINT = 0x2A,
+		EXECUTE = 0x2B,
+		PRINT_SCREEN = 0x2C,
+		DEL = 0x2E,
+		HELP = 0x2F,
+
+		NUM_0 = 0x30,
+		NUM_1 = 0x31,
+		NUM_2 = 0x32,
+		NUM_3 = 0x33,
+		NUM_4 = 0x34,
+		NUM_5 = 0x35,
+		NUM_6 = 0x36,
+		NUM_7 = 0x37,
+		NUM_8 = 0x38,
+		NUM_9 = 0x39,
+
+		A = 0x41,
+		B = 0x42,
+		C = 0x43,
+		D = 0x44,
+		E = 0x45,
+		F = 0x46,
+		G = 0x47,
+		H = 0x48,
+		I = 0x49,
+		J = 0x4A,
+		K = 0x4B,
+		L = 0x4C,
+		M = 0x4D,
+		N = 0x4E,
+		O = 0x4F,
+		P = 0x50,
+		Q = 0x51,
+		R = 0x52,
+		S = 0x53,
+		T = 0x54,
+		U = 0x55,
+		V = 0x56,
+		W = 0x57,
+		X = 0x58,
+		Y = 0x59,
+		Z = 0x5A,
+
+		NUMPAD_0 = 0x60,
+		NUMPAD_1 = 0x61,
+		NUMPAD_2 = 0x62,
+		NUMPAD_3 = 0x63,
+		NUMPAD_4 = 0x64,
+		NUMPAD_5 = 0x65,
+		NUMPAD_6 = 0x66,
+		NUMPAD_7 = 0x67,
+		NUMPAD_8 = 0x68,
+		NUMPAD_9 = 0x69,
+
+		MULTIPLY = 0x6A,
+		ADD = 0x6B,
+		SUBTRACT = 0x6D,
+		DIVIDE = 0x6F,
+
+		F1 = 0x70,
+		F2 = 0x71,
+		F3 = 0x72,
+		F4 = 0x73,
+		F5 = 0x74,
+		F6 = 0x75,
+		F7 = 0x76,
+		F8 = 0x77,
+		F9 = 0x78,
+		F10 = 0x79,
+		F11 = 0x7A,
+		F12 = 0x7B,
+
+		NUM_LOCK = 0x90,
+		SCROLL_LOCK = 0x91,
+
+		LEFT_SHIFT = 0xA0,
+		RIGHT_SHIFT = 0xA1,
+		LEFT_CTRL = 0xA2,
+		RIGHT_CTRL = 0xA3,
+		LEFT_ALT = 0xA4,
+		RIGHT_ALT = 0xA5,
+
+		PLUS = 0xBB,
+		MINUS = 0xBD,
+
+		INPUT_MAX
+	};
+
+	struct ButtonState
+	{
+		bool bPressed{ false };
+		bool bHeld{ false };
+		bool bReleased{ false };
+
+		__forceinline void Reset()
+		{
+			bPressed = false;
+			bHeld = false;
+			bReleased = false;
+		}
+	};
+}
